@@ -376,6 +376,79 @@ select.inp{appearance:none;background-image:url('data:image/svg+xml,<svg xmlns="
   .calamt{display:none}
   .hm-c{width:8px;height:8px}
 }
+
+/* ============ FINORA 5.7 — VISUAL REFRESH ============ */
+:root{
+ --bg:#f3f6f2;--bg2:#edf2ed;--sf:#ffffff;--sf2:#ffffff;--sf3:#f4f7f3;
+ --line:rgba(20,62,39,.10);--line2:rgba(20,90,51,.22);
+ --text:#17251c;--muted:#65766b;--faint:#87958c;
+ --lime:#1d8b50;--lime2:#147341;--lime-soft:rgba(29,139,80,.10);
+ --green:#198754;--green-deep:#e1f1e7;
+ --rose:#dc5366;--rose-soft:rgba(220,83,102,.10);
+ --amber:#bd8117;--amber-soft:rgba(189,129,23,.12);
+ --cyan:#168ca1;--cyan-soft:rgba(22,140,161,.10);
+ --shadow:0 18px 44px -24px rgba(26,55,37,.22);
+}
+body{background:var(--bg);color:var(--text)}
+.bg-fx{background:radial-gradient(800px 420px at 0% 0%,rgba(29,139,80,.07),transparent 65%),radial-gradient(700px 420px at 100% 100%,rgba(22,140,161,.05),transparent 60%)}
+.bg-fx::after{opacity:.025}
+.orb{display:none}
+#sidebar{background:#fff;border-right:1px solid var(--line);box-shadow:8px 0 30px rgba(25,60,40,.025)}
+.brand{border-bottom-color:var(--line)}
+.logo-mark,.sp-logo{background:linear-gradient(135deg,#1d8b50,#35ad70);color:white;box-shadow:0 5px 18px rgba(29,139,80,.22)}
+.logo-mark::after{border-color:rgba(29,139,80,.25)}
+.brand span,.sp-sub{color:var(--lime)}
+.snav a{color:#64756a}
+.snav a:hover{background:#f1f7f2;color:#1d7042}
+.snav a.on{color:#167345;background:#eaf5ed}
+.snav a.on::before{background:#1d8b50;box-shadow:none}
+.nsec{color:#9aa79e}
+.sb-card{background:linear-gradient(135deg,#eff8f1,#f4faf6);border-color:#dcece0}
+.sb-card .val{color:#187847}
+.avatar{background:#e5f3e9;color:#187847}
+#topbar{background:rgba(255,255,255,.88);border-bottom-color:var(--line);backdrop-filter:blur(16px)}
+.tb-search input,.inp,select.inp,#pal-in{background:#f7faf7;color:var(--text);border-color:#e2eae3}
+.card,.modal,.notifp,.gsres,.pal{background:#fff;border-color:var(--line);box-shadow:0 8px 28px rgba(27,58,39,.045)}
+.card.pad{box-shadow:0 3px 14px rgba(27,58,39,.025)}
+.btn.primary{background:linear-gradient(135deg,#238d54,#167444);color:#fff;box-shadow:0 5px 15px rgba(29,139,80,.2)}
+.btn.ghost,.icon-btn{background:#fff;border-color:#e1e9e2;color:#5d7063}
+.btn.ghost:hover,.icon-btn:hover{color:#167345;border-color:#9dc9aa}
+.icon-btn{background:#f9fbf9}
+.s-icn{background:var(--tone,var(--lime-soft))}
+.pbar{background:#e8efe9}
+.seg{background:#f3f7f3;border-color:#e2eae3}
+.seg button.on{background:#1d8b50;color:#fff}
+.trow:hover,.gs-i:hover,.np-i:hover,.pal-i:hover{background:#f4f8f4}
+.trow+.trow,.ins-row,.hist-item{border-color:#edf1ed}
+.calcell{background:#fbfdfb;border-color:#e4ebe5}
+.calcell.sel,.calcell.today{border-color:#1d8b50;background:#eff8f1}
+.hm-c{background:#edf2ed}
+.mback{background:rgba(21,38,27,.38)}
+.modal{background:#fff}
+.mbody{color:var(--text)}
+#pin-in{background:#f7faf7;color:var(--text)}
+#lock{background:#f3f6f2}
+#splash{background:#f3f6f2}
+.sp-name{color:#17251c}
+#chart-tip{background:#183c29;color:#fff}
+@media(max-width:940px){#sidebar{background:#fff}}
+/* Catatan */
+.notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.note-card{min-height:220px;display:flex;flex-direction:column;gap:12px}
+.note-card.pinned{border-color:rgba(29,139,80,.35);background:linear-gradient(150deg,#fff,#f5fbf6)}
+.note-top,.note-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.note-card h3{font-size:16px;overflow-wrap:anywhere}
+.note-body{font-size:13px;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere;flex:1;line-height:1.7}
+.note-foot{border-top:1px solid var(--line);padding-top:10px}
+.note-foot>span{font-size:10.5px;color:var(--faint)}
+.note-foot>div{display:flex;gap:5px}
+.note-pin-label{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:12px;color:var(--muted);cursor:pointer}
+.note-pin-label input{accent-color:var(--lime);width:16px;height:16px}
+.notes-tip{background:linear-gradient(110deg,#f2f9f4,#fff)}
+@media(max-width:1050px){.notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.notes-grid{grid-template-columns:1fr}.note-card{min-height:180px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
@@ -385,7 +458,7 @@ select.inp{appearance:none;background-image:url('data:image/svg+xml,<svg xmlns="
 <div id="splash">
   <div class="sp-logo">F</div>
   <div class="sp-name">FINORA</div>
-  <div class="sp-sub">4.8 PRO MAX</div>
+  <div class="sp-sub">5.7</div>
   <div class="sp-bar"><i></i></div>
 </div>
 
@@ -393,7 +466,7 @@ select.inp{appearance:none;background-image:url('data:image/svg+xml,<svg xmlns="
 <aside id="sidebar">
   <div class="brand">
     <div class="logo-mark">F</div>
-    <div><h2>FINORA</h2><span>4.8 PRO MAX</span></div>
+    <div><h2>FINORA</h2><span>5.7</span></div>
   </div>
   <nav class="snav" id="snav">
     <div class="nsec">Menu Utama</div>
@@ -408,7 +481,9 @@ select.inp{appearance:none;background-image:url('data:image/svg+xml,<svg xmlns="
     <div class="nsec">Analisis</div>
     <a href="#/reports" data-r="reports"></a>
     <a href="#/calendar" data-r="calendar"></a>
-    <div class="nsec">Sistem</div>
+    <div class="nsec">Produktivitas</div>
+     <a href="#/notes" data-r="notes"></a>
+     <div class="nsec">Sistem</div>
     <a href="#/settings" data-r="settings"></a>
   </nav>
   <div class="sb-card"><div class="lbl">Saldo Total</div><div class="val num" id="sb-bal">Rp 0</div></div>
@@ -461,7 +536,7 @@ select.inp{appearance:none;background-image:url('data:image/svg+xml,<svg xmlns="
 
 <script>
 /* =========================================================
-   FINORA 4.8 PRO MAX — Mesin Keuangan
+   FINORA 5.7 — Mesin Keuangan
    Penyimpanan: localStorage (kunci: finora_v3, migrasi otomatis)
 ========================================================= */
 'use strict';
@@ -566,7 +641,8 @@ function defaultCats(){
   ];
 }
 function defaultDB(){return{
-  version:'4.8',
+  version:'5.7',
+   notes:[],
   profile:{name:'Pengguna FINORA',currency:'IDR'},
   wallets:[],categories:defaultCats(),transactions:[],budgets:[],goals:[],
   emergency:{target:20000000,history:[]},
@@ -579,8 +655,8 @@ function defaultDB(){return{
 let db;
 try{const raw=localStorage.getItem(LS_KEY);db=raw?JSON.parse(raw):defaultDB();}catch(e){db=defaultDB();}
 if(!db.categories||!db.categories.length)db=defaultDB();
-db.dismissedNotifs=db.dismissedNotifs||[];db.flags=db.flags||{welcomed:true};db.security=db.security||{pin:null};
-db.emergency=db.emergency||{target:20000000,history:[]};db.ui=db.ui||{privacy:false};db.version='4.8';
+db.notes=Array.isArray(db.notes)?db.notes:[];db.dismissedNotifs=db.dismissedNotifs||[];db.flags=db.flags||{welcomed:true};db.security=db.security||{pin:null};
+db.emergency=db.emergency||{target:20000000,history:[]};db.ui=db.ui||{privacy:false};db.version='5.7';
 function runRecurring(){
   const today=todayISO();let changed=false;
   for(const t of [...db.transactions]){
@@ -1274,7 +1350,7 @@ function renderSettings(){
     </div>
     <input type="file" id="restore-file" accept=".json" style="display:none">
     <p class="xs faint" style="margin-top:12px">${icon('info',12)} Backup menghasilkan file JSON lengkap. Restore akan mengganti seluruh data saat ini setelah konfirmasi.</p></div>
-  <div class="card pad" style="margin-top:18px"><h3>FINORA 4.8 PRO MAX</h3><p class="sm muted" style="margin-top:6px">Skor Kesehatan Finansial • Smart Insights • Heatmap pengeluaran • Command Palette (Ctrl+K) • Transaksi berulang • Mode Privasi • Cetak laporan PDF. Seluruh data disimpan di localStorage browser Anda. Aturan perhitungan: transfer, tabungan, dan utang tidak dihitung sebagai pemasukan/pengeluaran — tidak ada pencatatan ganda.</p></div>`;
+  <div class="card pad" style="margin-top:18px"><h3>FINORA 5.7</h3><p class="sm muted" style="margin-top:6px">Skor Kesehatan Finansial • Smart Insights • Heatmap pengeluaran • Command Palette (Ctrl+K) • Transaksi berulang • Mode Privasi • Cetak laporan PDF. Seluruh data disimpan di localStorage browser Anda. Aturan perhitungan: transfer, tabungan, dan utang tidak dihitung sebagai pemasukan/pengeluaran — tidak ada pencatatan ganda.</p></div>`;
 }
 
 /* ---------- 9. MODAL & ALUR FITUR ---------- */
@@ -1615,13 +1691,14 @@ function printReport(){
 
 /* ---------- 11. BACKUP / RESTORE / CSV ---------- */
 function download(name,content,mime){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type:mime}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000);}
-function backupNow(){download(`finora_backup_${todayISO()}.json`,JSON.stringify({app:'FINORA',version:'4.8',exported:new Date().toISOString(),data:db},null,2),'application/json');toast('Backup diunduh','ok','Simpan file di tempat aman.');}
+function backupNow(){download(`finora_backup_${todayISO()}.json`,JSON.stringify({app:'FINORA',version:'5.7',
+   notes:[],exported:new Date().toISOString(),data:db},null,2),'application/json');toast('Backup diunduh','ok','Simpan file di tempat aman.');}
 function restoreFile(file){
   const r=new FileReader();
   r.onload=()=>{try{
     const j=JSON.parse(r.result);const data=j.data||j;
     if(!Array.isArray(data.wallets)||!Array.isArray(data.transactions)||!Array.isArray(data.categories))throw 0;
-    confirmDialog({title:'Restore backup?',msg:'Seluruh data saat ini akan DIGANTI dengan isi backup. Lanjutkan?',okText:'Restore',onOk:()=>{db=data;db.dismissedNotifs=db.dismissedNotifs||[];db.flags=db.flags||{welcomed:true};db.security=db.security||{pin:null};db.ui=db.ui||{privacy:false};db.emergency=db.emergency||{target:0,history:[]};applyPriv();save();closeModal();location.hash='#/dashboard';refresh();toast('Data dipulihkan','ok');}});
+    confirmDialog({title:'Restore backup?',msg:'Seluruh data saat ini akan DIGANTI dengan isi backup. Lanjutkan?',okText:'Restore',onOk:()=>{db=data;db.notes=Array.isArray(db.notes)?db.notes:[];db.dismissedNotifs=db.dismissedNotifs||[];db.flags=db.flags||{welcomed:true};db.security=db.security||{pin:null};db.ui=db.ui||{privacy:false};db.emergency=db.emergency||{target:0,history:[]};applyPriv();save();closeModal();location.hash='#/dashboard';refresh();toast('Data dipulihkan','ok');}});
   }catch(e){toast('File tidak valid','err','Pastikan file berasal dari backup FINORA.');}};
   r.readAsText(file);
 }
@@ -1842,6 +1919,10 @@ document.addEventListener('click',e=>{
     'notif-go':()=>{location.hash='#/'+el.dataset.go;$('#notif-panel').classList.remove('on');},
     'gs-go':()=>{location.hash='#/'+el.dataset.go;$('#gs-res').classList.remove('on');$('#gsearch').value='';},
     'seed-demo':seedDemo,
+    'note-add':()=>openNoteModal(),
+    'note-edit':()=>openNoteModal(db.notes.find(n=>n.id===id)),
+    'note-pin':()=>{const n=db.notes.find(n=>n.id===id);if(n){n.pinned=!n.pinned;n.updatedAt=Date.now();save();refresh();}},
+    'note-del':()=>{const n=db.notes.find(n=>n.id===id);if(n)confirmDialog({title:'Hapus catatan?',msg:`Catatan \"${esc(n.title)}\" akan dihapus.`,onOk:()=>{db.notes=db.notes.filter(x=>x.id!==id);save();refresh();toast('Catatan dihapus','ok');}});},
     'backup':backupNow,
     'restore-pick':()=>$('#restore-file').click(),
     'export-csv':()=>{if(!db.transactions.length)return toast('Belum ada transaksi','warn');download(`finora_semua_transaksi_${todayISO()}.csv`,buildCSV([...db.transactions].sort((a,b)=>a.date.localeCompare(b.date))),'text/csv');toast('CSV diekspor','ok');},
@@ -1898,6 +1979,38 @@ async function tryUnlock(){
   else{inp.value='';inp.classList.remove('shake');void inp.offsetWidth;inp.classList.add('shake');toast('PIN salah','err');}
 }
 
+
+/* ---------- 14b. CATATAN KEUANGAN 5.7 ---------- */
+function renderNotes(){
+  const notes=[...db.notes].sort((a,b)=>(b.pinned-a.pinned)||b.updatedAt-a.updatedAt);
+  return `<div class="page-head"><div><div class="chip ok">RUANG CATATAN</div><h2 class="greet-t" style="margin-top:8px">Catatan Keuangan</h2><p class="muted sm">Simpan rencana, pengingat, dan hal penting terkait uang.</p></div>
+    <button class="btn primary" data-act="note-add">${icon('plus',15)} Catatan Baru</button></div>
+    <div class="notes-tip card pad" style="margin-bottom:18px"><div style="display:flex;gap:12px;align-items:center"><div class="s-icn" style="--tone:var(--cyan-soft);--tone-c:var(--cyan)">${icon('book',19)}</div><div><b>Catat sebelum lupa.</b><p class="muted sm">Contoh: rencana belanja, evaluasi bulanan, uang yang harus ditagih, atau ide menabung.</p></div></div></div>
+    ${notes.length?`<div class="notes-grid">${notes.map(n=>`<article class="note-card card pad ${n.pinned?'pinned':''}">
+      <div class="note-top"><span class="chip ${n.kind==='Penting'?'warn':n.kind==='Rencana'?'cy':'mut'}">${esc(n.kind)}</span><button class="icon-btn tiny" title="${n.pinned?'Lepas pin':'Sematkan'}" data-act="note-pin" data-id="${n.id}">${icon(n.pinned?'target':'sparkles',14)}</button></div>
+      <h3>${esc(n.title)}</h3><p class="note-body">${esc(n.body)}</p>
+      <div class="note-foot"><span>${fmtDate(n.date||todayISO())} · Diperbarui ${new Date(n.updatedAt).toLocaleDateString('id-ID')}</span><div><button class="icon-btn tiny" data-act="note-edit" data-id="${n.id}">${icon('edit',13)}</button><button class="icon-btn tiny" data-act="note-del" data-id="${n.id}">${icon('trash',13)}</button></div></div>
+    </article>`).join('')}</div>`:`<div class="card empty"><div class="eic">${icon('book',30)}</div><h3>Belum ada catatan</h3><p>Mulai dengan menulis tujuan, pengingat pembayaran, atau evaluasi pengeluaran.</p><button class="btn primary" data-act="note-add">${icon('plus',15)} Buat Catatan Pertama</button></div>`}`;
+}
+function openNoteModal(note){
+  const n=note||{};
+  openModal(`<div class="mhead"><h3>${n.id?'Edit Catatan':'Catatan Baru'}</h3><button class="icon-btn tiny" data-act="modal-close">${icon('x',14)}</button></div>
+  <form id="f-note"><div class="mbody">
+    ${field('Judul catatan',`<input class="inp" id="note-title" maxlength="80" required placeholder="Contoh: Target tabungan bulan ini" value="${esc(n.title||'')}">`)}
+    ${field('Isi catatan',`<textarea class="inp" id="note-body" rows="5" maxlength="1200" required placeholder="Tulis detail catatanmu...">${esc(n.body||'')}</textarea>`)}
+    <div class="frow"><div>${field('Jenis',`<select class="inp" id="note-kind"><option ${n.kind==='Umum'?'selected':''}>Umum</option><option ${n.kind==='Rencana'?'selected':''}>Rencana</option><option ${n.kind==='Penting'?'selected':''}>Penting</option><option ${n.kind==='Pengingat'?'selected':''}>Pengingat</option></select>`)}</div>
+    <div>${field('Tanggal',`<input class="inp" type="date" id="note-date" value="${n.date||todayISO()}">`)}</div></div>
+    <label class="note-pin-label"><input type="checkbox" id="note-pinned" ${n.pinned?'checked':''}> Sematkan catatan di bagian atas</label>
+  </div><div class="mfoot"><button class="btn ghost" type="button" data-act="modal-close">Batal</button><button class="btn primary" type="submit">Simpan Catatan</button></div></form>`);
+  $('#f-note').addEventListener('submit',e=>{
+    e.preventDefault();
+    const data={title:$('#note-title').value.trim(),body:$('#note-body').value.trim(),kind:$('#note-kind').value,date:$('#note-date').value||todayISO(),pinned:$('#note-pinned').checked,updatedAt:Date.now()};
+    if(!data.title||!data.body)return toast('Lengkapi judul dan isi catatan','warn');
+    if(n.id)Object.assign(n,data);else db.notes.push({id:uid(),...data,createdAt:Date.now()});
+    save();closeModal();refresh();toast('Catatan disimpan','ok');
+  });
+}
+
 /* ---------- 15. ROUTER & BOOT ---------- */
 const ROUTES={
   dashboard:{fn:renderDashboard,t:'Dashboard',s:'Ringkasan keuangan Anda'},
@@ -1909,9 +2022,10 @@ const ROUTES={
   debts:{fn:renderDebts,t:'Utang & Piutang',s:'Catatan pinjaman'},
   reports:{fn:renderReports,t:'Laporan',s:'Analisis keuangan'},
   calendar:{fn:renderCalendar,t:'Kalender',s:'Aktivitas per tanggal'},
+  notes:{fn:renderNotes,t:'Catatan Keuangan',s:'Rencana, pengingat & evaluasi'},
   settings:{fn:renderSettings,t:'Pengaturan',s:'Profil, kategori & data'}
 };
-const NAV_META={dashboard:['grid','Dashboard'],transactions:['swap','Transaksi'],wallets:['wallet','Dompet'],budgets:['target','Anggaran'],savings:['coins','Tabungan'],bills:['receipt','Tagihan'],debts:['debt','Utang & Piutang'],reports:['chart','Laporan'],calendar:['calendar','Kalender'],settings:['gear','Pengaturan']};
+const NAV_META={dashboard:['grid','Dashboard'],transactions:['swap','Transaksi'],wallets:['wallet','Dompet'],budgets:['target','Anggaran'],savings:['coins','Tabungan'],bills:['receipt','Tagihan'],debts:['debt','Utang & Piutang'],reports:['chart','Laporan'],calendar:['calendar','Kalender'],notes:['book','Catatan'],settings:['gear','Pengaturan']};
 function initNav(){
   let i=1;
   $$('#snav a').forEach(a=>{const[ic,lb]=NAV_META[a.dataset.r];
@@ -1946,8 +2060,8 @@ window.addEventListener('hashchange',route);
     db.flags.welcomed=true;save();
     setTimeout(()=>openModal(`<div style="padding:30px 28px;text-align:center">
       <div class="logo-mark" style="margin:0 auto 16px;width:52px;height:52px;font-size:26px">F</div>
-      <h3 style="font-size:20px">Selamat datang di FINORA 4.8 Pro Max 👋</h3>
-      <p class="muted sm" style="margin:10px 0 22px">Skor kesehatan finansial, smart insights, heatmap pengeluaran, command palette, dan transaksi berulang. Semua data tersimpan privat di browser Anda.</p>
+      <h3 style="font-size:20px">Selamat datang di FINORA 5.7 👋</h3>
+      <p class="muted sm" style="margin:10px 0 22px">Skor finansial, insight, anggaran, catatan keuangan, pengingat tagihan, dan backup data. Semua data tersimpan privat di browser Anda.</p>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <button class="btn primary" data-act="wallet-add">${icon('plus',15)} Buat Dompet Pertama</button>
         <button class="btn ghost" data-act="seed-demo">${icon('refresh',15)} Coba Data Contoh</button>
